@@ -5,12 +5,15 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import ChatInputBox from "./_components/ChatInputBox";
 import { UserProfile } from "@clerk/nextjs";
+import { Suspense } from "react";
 
 export default function Home() {
   const {setTheme} = useTheme();
   return (
     <div>
-      <ChatInputBox />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ChatInputBox />
+      </Suspense>
       {/* <UserProfile/> */}
     </div>
     // <div>
