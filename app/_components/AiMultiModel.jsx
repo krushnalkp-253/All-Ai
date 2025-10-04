@@ -61,17 +61,17 @@ function AiMultiModel() {
     }
 
     return (
-        <div className="flex flex-1 h-[75vh] border-b">
+        <div className="flex flex-col md:flex-row flex-1 h-auto md:h-[75vh] border-b">
             {aiModelList.map((model, index) => (
                 <div
                     key={index}
-                    className={`flex flex-col border-r h-full overflow-auto transition-all ${
-                        model.enable ? "flex-1 min-w-[400px]" : "w-[100px] flex-none"
+                    className={`flex flex-col border-b md:border-r h-auto md:h-full overflow-auto transition-all ${
+                        model.enable ? "w-full md:flex-1 md:min-w-[400px]" : "hidden md:block w-[100px] flex-none"
                     }`}
                 >
                     {/* Header */}
-                    <div className="flex w-full h-[80px] items-center justify-between border-b p-4">
-                        <div className="flex items-center gap-4">
+                    <div className="flex w-full h-auto md:h-[80px] items-center justify-between border-b p-4">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
                             <Image
                                 src={model.icon}
                                 alt={model.model}
@@ -80,7 +80,7 @@ function AiMultiModel() {
                             />
                             {model.enable && (
                                 <Select defaultValue={aiSelectedModel[model.model].modelId} onValueChange={(value) => onSelecteValue(model.model, value)} disabled={model.premium}>
-                                    <SelectTrigger className="w-[180px]">
+                                    <SelectTrigger className="w-full sm:w-[180px]">
                                         <SelectValue placeholder={aiSelectedModel[model.model].modelId} />
                                     </SelectTrigger>
                                     <SelectContent>

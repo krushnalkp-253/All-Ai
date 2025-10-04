@@ -221,7 +221,7 @@ useEffect(()=>{
         <AiMultiModel />
       </div>
       {/* {fixed chat input} */}
-      <div className='fixed bottom-0 left-0 w-full flex justify-center px-4 pd-4'>
+      <div className='fixed bottom-0 left-0 w-full flex justify-center px-4 pb-4'>
         <div className='w-full border-rounded-xl shadow-md max-w-2xl p-4 '>
           <input type='text' placeholder='Ask me Anythig....'
             className='border-0 outline-none w-full '
